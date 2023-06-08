@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">App_cursoK_liscacurso</string>
+    <string name="txt_titulo">Aplicativo Lista Vip Curso Android</string>
+    <string name="txt_hint_edit_primeiro_nome">Primeiro Nome</string>
+    <string name="txt_hint_edit_sobrenome">Sobrenome</string>
+    <string name="txt_hint_edit_nome_do_curso">Nome do Curso</string>
+    <string name="txt_hint_edit_telefone_contato">Telefone de Contato</string>
+    <string name="txt_button_limpar">Limpar</string>
+    <string name="txt_button_salvar">Salvar</string>
+    <string name="txt_button_finalizar">Finalizar</string>
+    <string name="btn_salvar">Salvar</string>
+    <string name="btn_limpar">Limpar</string>
+    <string name="btn_finalizar">Finalizar</string>
+
+
+</resources>
