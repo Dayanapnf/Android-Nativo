@@ -36,42 +36,32 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/edit_sobrenome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:ems="10"
             android:hint="@string/txt_hint_edit_sobrenome"
             android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
-            tools:ignore="Autofill" />
+             />
 
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/edit_nomedocurso"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:ems="10"
             android:hint="@string/txt_hint_edit_nome_do_curso"
             android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
-
+            />
         <EditText
-            android:id="@+id/editTextTextPersonName5"
+            android:id="@+id/edit_telefone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:ems="10"
             android:hint="@string/txt_hint_edit_telefone_contato"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
-
+            android:inputType="textPersonName"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

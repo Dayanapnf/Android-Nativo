@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace 'com.example.listavipapp'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.listavipapp"
         minSdk 26
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
