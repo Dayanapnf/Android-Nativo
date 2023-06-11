@@ -14,7 +14,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-
         <TextView
             android:id="@+id/txt_titulo"
             android:layout_width="wrap_content"
@@ -42,8 +41,7 @@
             android:layout_margin="16dp"
             android:ems="10"
             android:hint="@string/txt_hint_edit_sobrenome"
-            android:inputType="textPersonName"
-             />
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/edit_nomedocurso"
@@ -52,8 +50,8 @@
             android:layout_margin="16dp"
             android:ems="10"
             android:hint="@string/txt_hint_edit_nome_do_curso"
-            android:inputType="textPersonName"
-            />
+            android:inputType="textPersonName" />
+
         <EditText
             android:id="@+id/edit_telefone"
             android:layout_width="match_parent"
@@ -61,13 +59,14 @@
             android:layout_margin="16dp"
             android:ems="10"
             android:hint="@string/txt_hint_edit_telefone_contato"
-            android:inputType="textPersonName"/>
+            android:inputType="textPersonName" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="50dp"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <Button
@@ -86,7 +85,6 @@
                 android:backgroundTint="@color/colorBottons"
                 android:text="@string/btn_limpar" />
         </LinearLayout>
-
 
         <Button
             android:id="@+id/btn_finalizar"
