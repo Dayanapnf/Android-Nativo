@@ -6,10 +6,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.example.listavipapp.R;
+import com.example.listavipapp.controller.PessoaController;
 import com.example.listavipapp.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
 
+    PessoaController controler;
     Pessoa pessoa;
     EditText editTextPrimeiroNome;
     EditText editTextSobrenome;
@@ -27,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
         inicializacao();
 
         pessoa = new Pessoa();
+        controler = new PessoaController(MainActivity.this);
+
+
 
         //jogando os dados para os campos edit's
         setEdit();
@@ -49,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setSobrenome(editTextSobrenome.getText().toString());
                 pessoa.setCursoDesejado(editTextCursoDesejado.getText().toString());
                 pessoa.setTelefoneContato(editTextTelefone.getText().toString());
-                Toast.makeText(MainActivity.this, "Salvo", Toast.LENGTH_LONG).show();
+                controler.salvar(pessoa);
             }
         });
 
