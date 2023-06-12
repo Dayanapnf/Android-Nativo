@@ -1,6 +1,7 @@
 package com.example.listavipapp.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,6 +11,9 @@ import com.example.listavipapp.controller.PessoaController;
 import com.example.listavipapp.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
+
+    SharedPreferences preferences;
+    public static final String NOME_PREFERENCES = "pref_lista_vip";
 
     PessoaController controler;
     Pessoa pessoa;
@@ -28,10 +32,13 @@ public class MainActivity extends AppCompatActivity {
         //incializando os componentes
         inicializacao();
 
+        // 0 é leitura e esccrita
+        preferences = getSharedPreferences(NOME_PREFERENCES,0);
+        //criando lista para receber os dados
+        SharedPreferences.Editor listaVip = preferences.edit();
+
         pessoa = new Pessoa();
         controler = new PessoaController(MainActivity.this);
-
-
 
         //jogando os dados para os campos edit's
         setEdit();
@@ -54,6 +61,13 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setSobrenome(editTextSobrenome.getText().toString());
                 pessoa.setCursoDesejado(editTextCursoDesejado.getText().toString());
                 pessoa.setTelefoneContato(editTextTelefone.getText().toString());
+
+                listaVip.putString("primeiroNome",pessoa.getPrimeironome());
+                listaVip.putString("sobrenome",(pessoa.getSobrenome()));
+                listaVip.putString("cursoDesejado",(pessoa.getCursoDesejado()));
+                listaVip.putString("telefone",(pessoa.getTelefoneContato()));
+                listaVip.apply();
+
                 controler.salvar(pessoa);
             }
         });
