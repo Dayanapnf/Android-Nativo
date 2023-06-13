@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     SharedPreferences preferences;
     public static final String NOME_PREFERENCES = "pref_lista_vip";
-
+    SharedPreferences.Editor listaVip;
     PessoaController controler;
     Pessoa pessoa;
     EditText editTextPrimeiroNome;
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         // 0 é leitura e esccrita
         preferences = getSharedPreferences(NOME_PREFERENCES, 0);
         //criando lista para receber os dados
-        SharedPreferences.Editor listaVip = preferences.edit();
+        listaVip = preferences.edit();
 
 
 
@@ -112,6 +112,9 @@ public class MainActivity extends AppCompatActivity {
         editTextSobrenome.setText("");
         editTextCursoDesejado.setText("");
         editTextTelefone.setText("");
+        //limpando os dados da sharedpreference
+        listaVip.clear();
+        listaVip.apply();
     }
 
     public void btn_finalizar_activity() {
