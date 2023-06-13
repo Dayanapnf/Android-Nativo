@@ -1,11 +1,13 @@
 package com.example.listavipapp.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import com.example.listavipapp.R;
 import com.example.listavipapp.controller.PessoaController;
 import com.example.listavipapp.model.Pessoa;
@@ -32,16 +34,25 @@ public class MainActivity extends AppCompatActivity {
         //incializando os componentes
         inicializacao();
 
+        pessoa = new Pessoa();
+        controler = new PessoaController(MainActivity.this);
         // 0 é leitura e esccrita
-        preferences = getSharedPreferences(NOME_PREFERENCES,0);
+        preferences = getSharedPreferences(NOME_PREFERENCES, 0);
         //criando lista para receber os dados
         SharedPreferences.Editor listaVip = preferences.edit();
 
-        pessoa = new Pessoa();
-        controler = new PessoaController(MainActivity.this);
+
+
+        //armazenando no objeto os dados via preferences
+        pessoa.setPrimeironome(preferences.getString("primeiroNome", ""));
+        pessoa.setSobrenome(preferences.getString("sobrenome", ""));
+        pessoa.setCursoDesejado(preferences.getString("cursoDesejado", ""));
+        pessoa.setTelefoneContato(preferences.getString("telefone", ""));
+
 
         //jogando os dados para os campos edit's
         setEdit();
+
 
         //limpando os dados nos campos edit's
         btn_limpar.setOnClickListener(v -> btn_limpar_campos());
@@ -56,40 +67,43 @@ public class MainActivity extends AppCompatActivity {
                     editTextTelefone.getText().toString().isEmpty()) {
                 Toast.makeText(MainActivity.this, "Preencha todos os campos", Toast.LENGTH_LONG).show();
             } else {
-
-                pessoa.setPrimeironome(editTextPrimeiroNome.getText().toString());
-                pessoa.setSobrenome(editTextSobrenome.getText().toString());
-                pessoa.setCursoDesejado(editTextCursoDesejado.getText().toString());
-                pessoa.setTelefoneContato(editTextTelefone.getText().toString());
-
-                listaVip.putString("primeiroNome",pessoa.getPrimeironome());
-                listaVip.putString("sobrenome",(pessoa.getSobrenome()));
-                listaVip.putString("cursoDesejado",(pessoa.getCursoDesejado()));
-                listaVip.putString("telefone",(pessoa.getTelefoneContato()));
+                listaVip.putString("primeiroNome", editTextPrimeiroNome.getText().toString());
+                listaVip.putString("sobrenome", (editTextSobrenome.getText().toString()));
+                listaVip.putString("cursoDesejado", (editTextCursoDesejado.getText().toString()));
+                listaVip.putString("telefone", (editTextTelefone.getText().toString()));
                 listaVip.apply();
+
+                //armazenando no objeto os dados via preferences
+                pessoa.setPrimeironome(preferences.getString("primeiroNome", ""));
+                pessoa.setSobrenome(preferences.getString("sobrenome", ""));
+                pessoa.setCursoDesejado(preferences.getString("cursoDesejado", ""));
+                pessoa.setTelefoneContato(preferences.getString("telefone", ""));
 
                 controler.salvar(pessoa);
             }
+
         });
 
         // Log.i("DADOS PESSOA: ",pessoa.toString());
     }
+
     public void inicializacao() {
         editTextPrimeiroNome = findViewById(R.id.edit_primeironome);
         editTextSobrenome = findViewById(R.id.edit_sobrenome);
         editTextCursoDesejado = findViewById(R.id.edit_nomedocurso);
         editTextTelefone = findViewById(R.id.edit_telefone);
+        btn_limpar = findViewById(R.id.btn_limpar);
+        btn_salvar = findViewById(R.id.btn_salvar);
+        btn_finalizar = findViewById(R.id.btn_finalizar);
 
     }
 
     public void setEdit() {
-        editTextPrimeiroNome.setText(pessoa.getPrimeironome());
-        editTextSobrenome.setText(pessoa.getSobrenome());
+        editTextPrimeiroNome.setText((pessoa.getPrimeironome()));
+        editTextSobrenome.setText((pessoa.getSobrenome()));
         editTextCursoDesejado.setText(pessoa.getCursoDesejado());
         editTextTelefone.setText(pessoa.getTelefoneContato());
-        btn_limpar = findViewById(R.id.btn_limpar);
-        btn_salvar = findViewById(R.id.btn_salvar);
-        btn_finalizar = findViewById(R.id.btn_finalizar);
+
     }
 
     //metodo para limpar os campos
@@ -103,4 +117,5 @@ public class MainActivity extends AppCompatActivity {
     public void btn_finalizar_activity() {
         finish();
     }
+
 }
