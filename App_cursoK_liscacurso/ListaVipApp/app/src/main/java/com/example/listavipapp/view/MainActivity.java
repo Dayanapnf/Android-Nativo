@@ -1,12 +1,12 @@
 package com.example.listavipapp.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.listavipapp.R;
 import com.example.listavipapp.controller.PessoaController;
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     public EditText editTextTelefone;
     Button btn_limpar;
     Button btn_salvar;
-    Button btn_finalizar;
+    TextView txt_finalizar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         //limpando os dados nos campos edit's
         btn_limpar.setOnClickListener(v -> btn_limpar_campos());
 
-        btn_finalizar.setOnClickListener(v -> btn_finalizar_activity());
+        txt_finalizar.setOnClickListener(v -> txt_finalizar_activity());
 
         btn_salvar.setOnClickListener(v -> {
 
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         editTextTelefone = findViewById(R.id.edit_telefone);
         btn_limpar = findViewById(R.id.btn_limpar);
         btn_salvar = findViewById(R.id.btn_salvar);
-        btn_finalizar = findViewById(R.id.btn_finalizar);
+        txt_finalizar = findViewById(R.id.btn_finalizar);
     }
 
     public void setEdit() {
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         controler.limpar();
     }
 
-    public void btn_finalizar_activity() {
+    public void txt_finalizar_activity() {
         finish();
     }
 
