@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_whtie"
     tools:context=".view.MainActivity">
 
     <LinearLayout
@@ -26,17 +25,13 @@
             android:text="@string/btn_sair"
             android:textAllCaps="true" />
 
-        <TextView
+        <ImageView
             android:id="@+id/txt_titulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_margin="40dp"
-            android:fontFamily="casual"
-            android:textColor="@color/colorBottons"
-            android:textStyle="bold"
-            android:text="@string/txt_titulo"
-            android:textSize="30sp" />
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:background="@drawable/logo_listavip" />
 
         <EditText
             android:id="@+id/edit_primeironome"
