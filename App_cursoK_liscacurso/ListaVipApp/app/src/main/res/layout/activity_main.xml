@@ -6,117 +6,134 @@
     android:layout_height="match_parent"
     tools:context=".view.MainActivity">
 
-    <LinearLayout
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/btn_finalizar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:layout_gravity="right"
-            android:textColor="@color/colorBottons"
-            android:backgroundTint="@color/white"
-            android:text="@string/btn_sair"
-            android:textAllCaps="true" />
-
-        <ImageView
-            android:id="@+id/txt_titulo"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_gravity="center"
-            android:layout_margin="20dp"
-            android:background="@drawable/logo_listavip" />
-
-        <EditText
-            android:id="@+id/edit_primeironome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:layout_marginTop="25dp"
-            android:ems="10"
-            android:hint="@string/txt_hint_edit_primeiro_nome"
-            android:inputType="textPersonName"
-            android:background="@drawable/background_btn"/>
-
-        <EditText
-            android:id="@+id/edit_sobrenome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:ems="10"
-            android:hint="@string/txt_hint_edit_sobrenome"
-            android:inputType="textPersonName"
-            android:background="@drawable/background_btn"/>
-
-        <EditText
-            android:id="@+id/edit_nomedocurso"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:ems="10"
-            android:hint="@string/txt_hint_edit_nome_do_curso"
-            android:inputType="textPersonName"
-            android:background="@drawable/background_btn"/>
-
-        <EditText
-            android:id="@+id/edit_telefone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:ems="10"
-            android:hint="@string/txt_hint_edit_telefone_contato"
-            android:inputType="textPersonName"
-            android:background="@drawable/background_btn"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="16dp"
-            android:textColor="@color/colorBottons"
-            android:textStyle="bold"
-            android:text="@string/selecione_um_curso"
-
-        />
-        <Spinner
-            android:id="@+id/spinner_list_curso"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_spinner"/>
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="50dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <Button
-                android:id="@+id/btn_salvar"
+            <TextView
+                android:id="@+id/btn_finalizar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="right"
                 android:layout_margin="16dp"
-                android:backgroundTint="@color/colorBottons"
-                android:text="@string/btn_salvar" />
+                android:backgroundTint="@color/white"
+                android:text="@string/btn_sair"
+                android:textAllCaps="true"
+                android:textColor="@color/colorBottons" />
 
-            <Button
-                android:id="@+id/btn_limpar"
-                android:layout_width="wrap_content"
+            <ImageView
+                android:id="@+id/txt_titulo"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:background="@drawable/logo_listavip" />
+
+            <EditText
+                android:id="@+id/edit_primeironome"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:backgroundTint="@color/colorBottons"
-                android:text="@string/btn_limpar" />
+                android:layout_marginTop="25dp"
+                android:background="@drawable/background_btn"
+                android:ems="10"
+                android:hint="@string/txt_hint_edit_primeiro_nome"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/edit_sobrenome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/background_btn"
+                android:ems="10"
+                android:hint="@string/txt_hint_edit_sobrenome"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/edit_nomedocurso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/background_btn"
+                android:ems="10"
+                android:hint="@string/txt_hint_edit_nome_do_curso"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/edit_telefone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/background_btn"
+                android:ems="10"
+                android:hint="@string/txt_hint_edit_telefone_contato"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/selecione_um_curso"
+                android:textColor="@color/colorBottons"
+                android:textStyle="bold"
+
+                />
+
+            <Spinner
+                android:id="@+id/spinner_list_curso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/background_spinner" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="50dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_salvar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:backgroundTint="@color/colorBottons"
+                    android:text="@string/btn_salvar" />
+
+                <Button
+                    android:id="@+id/btn_limpar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:backgroundTint="@color/colorBottons"
+                    android:text="@string/btn_limpar" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+
+    </ScrollView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
