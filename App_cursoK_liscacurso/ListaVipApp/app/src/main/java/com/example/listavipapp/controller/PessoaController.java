@@ -23,9 +23,9 @@ public class PessoaController {
 
     public void salvar(MainActivity mainActivity) {
         listaVip.putString("primeiroNome", mainActivity.editTextPrimeiroNome.getText().toString());
-        listaVip.putString("sobrenome", (mainActivity.editTextSobrenome.getText().toString()));
-        listaVip.putString("cursoDesejado", (mainActivity.editTextCursoDesejado.getText().toString()));
-        listaVip.putString("telefone", (mainActivity.editTextTelefone.getText().toString()));
+        listaVip.putString("sobrenome", mainActivity.editTextSobrenome.getText().toString());
+        listaVip.putString("cursoDesejado", mainActivity.nomeDoCurso_spinner);
+        listaVip.putString("telefone", mainActivity.editTextTelefone.getText().toString());
         listaVip.apply();
 
         Toast.makeText(mainActivity, "Salvo", Toast.LENGTH_LONG).show();
@@ -40,9 +40,15 @@ public class PessoaController {
         return pessoa;
     }
 
-    public void limpar() {
+    public void limpar(MainActivity mainActivity) {
         //limpando os dados da sharedpreference
         listaVip.clear();
         listaVip.apply();
+        // Limpar também os campos na atividade principal
+
+        mainActivity.editTextPrimeiroNome.setText("");
+        mainActivity.editTextSobrenome.setText("");
+        mainActivity.spinner.setSelection(0); // Defina a seleção para o primeiro item ou para o valor padrão desejado
+        mainActivity.editTextTelefone.setText("");
     }
 }
