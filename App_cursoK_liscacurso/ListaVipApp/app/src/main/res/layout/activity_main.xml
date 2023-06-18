@@ -45,42 +45,86 @@
                 android:layout_margin="20dp"
                 android:background="@drawable/logo_listavip" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:text="Nome"
+                android:textColor="@color/colorBottons"
+                android:textStyle="bold"
+
+                />
+
             <EditText
                 android:id="@+id/edit_primeironome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
                 android:background="@drawable/background_btn"
                 android:ems="10"
                 android:hint="@string/txt_hint_edit_primeiro_nome"
                 android:inputType="textPersonName" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:text="Sobrenome"
+                android:textColor="@color/colorBottons"
+                android:textStyle="bold"
+
+                />
+
             <EditText
                 android:id="@+id/edit_sobrenome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
                 android:background="@drawable/background_btn"
                 android:ems="10"
                 android:hint="@string/txt_hint_edit_sobrenome"
                 android:inputType="textPersonName" />
 
-            <EditText
-                android:id="@+id/edit_nomedocurso"
+
+            <!-- <EditText
+                 android:id="@+id/edit_nomedocurso"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="16dp"
+                 android:layout_marginTop="5dp"
+                 android:layout_marginRight="16dp"
+                 android:background="@drawable/background_btn"
+                 android:ems="10"
+                 android:hint="@string/txt_hint_edit_nome_do_curso"
+                 android:inputType="textPersonName" />
+              -->
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:background="@drawable/background_btn"
-                android:ems="10"
-                android:hint="@string/txt_hint_edit_nome_do_curso"
-                android:inputType="textPersonName" />
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:text="Telefone"
+                android:textColor="@color/colorBottons"
+                android:textStyle="bold"
+
+                />
 
             <EditText
                 android:id="@+id/edit_telefone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
                 android:background="@drawable/background_btn"
                 android:ems="10"
                 android:hint="@string/txt_hint_edit_telefone_contato"
