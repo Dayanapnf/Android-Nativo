@@ -31,6 +31,8 @@ O aplicativo "Lista VIP" é uma ferramenta simples desenvolvida para gerenciar u
       -   EditText
       -   TextView
       -   Button
+      -   ScrollView
+      -   ImageView
     
   - Armazenamento dos dados
      - SharedPreferences
