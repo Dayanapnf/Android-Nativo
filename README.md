@@ -11,27 +11,9 @@ Aplicativos desenvolvidos durante o processo de aprendizagem
   - Kotlin 
 
 ## Aplicativos Desenvolvidos
-  - Lista Vip
-      -  Arquitetura MVC
-        - Model
-          - Pessoa
-          - Curso
-        - View
-          - Splash Screen
-          - Main
-        - Controller
-          - PessoaController
-          - CursoController
-      -  Componentes Utilizados
-          -   Spinner
-          -   EditText
-          -   TexView
-          -   Button
-      - Armazenamento dos dados
-        - Shared Preference
-      - Telas
-       
-        
+  - [Lista Vip](https://github.com/Dayanapnf/Android-Nativo/tree/main/App_cursoK_liscacurso)
+    -  [Descrição](https://github.com/Dayanapnf/Android-Nativo/blob/main/App_cursoK_liscacurso/README.md)
+    -  Telas
         - <br><div> <img src="https://github.com/Dayanapnf/Android-Nativo/blob/main/App_cursoK_liscacurso/Image/layout_aPpListaVip.png" width="400" height="400"/> </div>
 
        
