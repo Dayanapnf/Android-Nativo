@@ -4,7 +4,13 @@
 
 
 # Lista Vip 🤖
-Aplicativo que pega Nome, Sobrenome, Telefone e Curso. O app cria, deleta/limpa, atualiza e ler os dados da pessoa.
+O aplicativo "Lista VIP" é uma ferramenta desenvolvida para gerenciar uma lista de convidados VIP. Com este aplicativo, os usuários podem adicionar informações sobre os convidados, como primeiro nome, sobrenome, curso desejado e telefone de contato. O aplicativo também permite que os usuários visualizem, editem e removam os dados dos convidados.
+<br>
+O destaque do aplicativo é a funcionalidade do spinner, que permite aos usuários selecionar o curso desejado a partir de uma lista de opções. Essa lista é gerada dinamicamente a partir de dados armazenados, utilizando um controlador de cursos.
+<br>
+Além disso, o aplicativo utiliza o SharedPreferences para armazenar os dados dos convidados, permitindo que sejam salvos e recuperados entre as sessões. Os dados são salvos quando o usuário clica no botão "Salvar" e podem ser limpos utilizando o botão "Limpar".
+<br>
+Com uma interface simples e intuitiva, o aplicativo "Lista VIP" oferece uma maneira conveniente de gerenciar e organizar informações sobre os convidados VIP. É útil para eventos, festas ou qualquer situação em que seja necessário manter uma lista de convidados especial.
 
 ## Linguagem
   - Java ☕
