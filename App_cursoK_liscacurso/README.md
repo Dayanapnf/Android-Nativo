@@ -23,7 +23,7 @@ Aplicativo que pega Nome, Sobrenome, Telefone e Curso. O app cria, deleta/limpa,
   -  Componentes Utilizados
       -   Spinner
       -   EditText
-      -   TexView
+      -   TextView
       -   Button
     
   - Armazenamento dos dados
