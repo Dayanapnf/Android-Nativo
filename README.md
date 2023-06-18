@@ -13,7 +13,7 @@ Aplicativos desenvolvidos durante o processo de aprendizagem
 ## Aplicativos Desenvolvidos
   - [Lista Vip](https://github.com/Dayanapnf/Android-Nativo/tree/main/App_cursoK_liscacurso)
     -  [Descrição](https://github.com/Dayanapnf/Android-Nativo/blob/main/App_cursoK_liscacurso/README.md)
-    -  Telas
+    -  [Telas](https://github.com/Dayanapnf/Android-Nativo/tree/main/App_cursoK_liscacurso/Image)
         - <br><div> <img src="https://github.com/Dayanapnf/Android-Nativo/blob/main/App_cursoK_liscacurso/Image/layout_aPpListaVip.png" width="400" height="400"/> </div>
 
        
