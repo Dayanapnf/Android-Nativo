@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 functionCalcular();
-
             }
         });
         imageButtonLimpar.setOnClickListener(new View.OnClickListener() {
@@ -48,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 textViewResultado.setText("");
                 editTextEtanol.setText("");
                 editTextGasolina.setText("");
+
 
 
             }
@@ -77,26 +77,37 @@ public class MainActivity extends AppCompatActivity {
         imageButtonLimpar = findViewById(R.id.imageButtonLimpar);
         buttonCalcular = findViewById(R.id.buttonCalcular);
     }
-    public void functionCalcular(){
+    public void functionCalcular() {
+        // Reinicializa a flag de validação para cada chamada da função
+        isDadosOk = true;
 
-        if(TextUtils.isEmpty(editTextGasolina.getText())){
+        // Verifica se o campo de gasolina está vazio
+        if (TextUtils.isEmpty(editTextGasolina.getText())) {
             editTextGasolina.setError("Obrigatório");
             editTextGasolina.requestFocus();
             isDadosOk = false;
-        }if (TextUtils.isEmpty(editTextEtanol.getText())){
+        }
+
+        // Verifica se o campo de etanol está vazio
+        if (TextUtils.isEmpty(editTextEtanol.getText())) {
             editTextEtanol.setError("Obrigatório");
             editTextEtanol.requestFocus();
             isDadosOk = false;
-        }if(isDadosOk){
-           precoGasolina = Double.parseDouble(editTextGasolina.getText().toString());
-           precoEtanol = Double.parseDouble(editTextEtanol.getText().toString());
-           result = UtilGasEta.calcularMelhorOpcao(precoGasolina,precoEtanol);
-           textViewResultado.setText(result);
-        }else{
-            Toast.makeText(MainActivity.this, "Preencha todos os campos!", Toast.LENGTH_LONG ).show();
-
         }
 
-
+        // Se os dados estiverem OK, realiza o cálculo
+        if (isDadosOk) {
+            try {
+                precoGasolina = Double.parseDouble(editTextGasolina.getText().toString());
+                precoEtanol = Double.parseDouble(editTextEtanol.getText().toString());
+                result = UtilGasEta.calcularMelhorOpcao(precoGasolina, precoEtanol);
+                textViewResultado.setText(result);
+            } catch (NumberFormatException e) {
+                Toast.makeText(MainActivity.this, "Insira valores válidos nos campos!", Toast.LENGTH_LONG).show();
+            }
+        } else {
+            Toast.makeText(MainActivity.this, "Preencha todos os campos!", Toast.LENGTH_LONG).show();
+        }
     }
+
 }
