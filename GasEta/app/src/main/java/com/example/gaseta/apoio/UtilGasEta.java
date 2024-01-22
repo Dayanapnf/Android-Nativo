@@ -1,25 +1,37 @@
 package com.example.gaseta.apoio;
 
 public class UtilGasEta {
-   public static String calcularMelhorOpcao(Double precoGasolina, Double precoEtanol){
-       String resultado = "";
+    public static String calcularMelhorOpcao(String modeloCarro, double precoGasolina, double precoEtanol) {
+        String resultado = "";
 
-        // Verifica se ambos os preços são não negativos
-       if (precoGasolina >= 0 && precoEtanol >= 0) {
-           // Calcula a relação entre o preço do etanol e da gasolina
-           double relacaoPreco = precoEtanol / precoGasolina;
+        double consumoEtanol = 0;
+        double consumoGasolina = 0;
 
-           // Compara a relação de preços e determina a melhor opção
-           if (relacaoPreco < 0.7) {
-               resultado = "Melhor opção: Etanol";
-           } else {
-               resultado = "Melhor opção: Gasolina";
-           }
-       } else {
-           resultado = "Os preços não podem ser negativos";
-       }
+        // Definir consumos com base no modelo do carro
+        if (modeloCarro.equals("Kwid 1.0 20/21(urbano)")) {
+            consumoEtanol = 10.3; // km/l
+            consumoGasolina = 14.9; // km/l
+        } else if (modeloCarro.equals("Kwid 1.0 20/21(rodoviário)")) {
+            consumoEtanol = 10.8; // km/l
+            consumoGasolina = 15.6; // km/l
+        } else {
+            // Lógica para outros modelos, se necessário
+            return "Modelo de carro não suportado.";
+        }
 
+        // Cálculo de custo total considerando preço e consumo
+        double custoTotalEtanol = precoEtanol / consumoEtanol;
+        double custoTotalGasolina = precoGasolina / consumoGasolina;
 
-       return resultado;
-   }
+        // Comparação para determinar qual combustível é mais vantajoso
+        if (custoTotalEtanol < custoTotalGasolina) {
+            resultado = "Abasteça com Etanol";
+        } else if (custoTotalEtanol > custoTotalGasolina) {
+            resultado = "Abasteça com Gasolina";
+        } else {
+            resultado = "Tanto faz";
+        }
+
+        return resultado;
+    }
 }

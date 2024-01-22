@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">GasEta</string>
+    <string-array name="modelos_carro">
+        <item>Kwid 1.0 20/21(urbano)</item>
+        <item>Kwid 1.0 20/21(rodoviário)</item>
+    </string-array>
 </resources>
