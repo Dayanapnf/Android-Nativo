@@ -1,5 +1,7 @@
 package com.example.gaseta.apoio;
 
+import java.text.DecimalFormat;
+
 public class UtilGasEta {
     public static String calcularMelhorOpcao(String modeloCarro, double precoGasolina, double precoEtanol) {
         String resultado = "";
@@ -23,13 +25,24 @@ public class UtilGasEta {
         double custoTotalEtanol = precoEtanol / consumoEtanol;
         double custoTotalGasolina = precoGasolina / consumoGasolina;
 
+        // Arredondar para a segunda casa decimal
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        custoTotalEtanol = Double.parseDouble(decimalFormat.format(custoTotalEtanol).replace(",","."));
+        custoTotalGasolina = Double.parseDouble(decimalFormat.format(custoTotalGasolina).replace(",","."));
+
         // Comparação para determinar qual combustível é mais vantajoso
         if (custoTotalEtanol < custoTotalGasolina) {
-            resultado = "Abasteça com Etanol";
+            resultado = "Custo Gasolina: " + custoTotalGasolina +
+                    "\nCusto Etanol: " + custoTotalEtanol +
+                    "\n\nAbasteça com Etanol";
         } else if (custoTotalEtanol > custoTotalGasolina) {
-            resultado = "Abasteça com Gasolina";
+            resultado = "Custo Gasolina: " + custoTotalGasolina +
+                    "\nCusto Etanol: " + custoTotalEtanol +
+                    "\n\nAbasteça com Gasolina";
         } else {
-            resultado = "Tanto faz";
+            resultado = "Custo Gasolina: " + custoTotalGasolina +
+                    "\nCusto Etanol: " + custoTotalEtanol +
+                    "\n\nTanto faz";
         }
 
         return resultado;
